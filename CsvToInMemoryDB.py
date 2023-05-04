@@ -78,6 +78,6 @@ if __name__ == '__main__':
 
     query = handle_response(response)
 
-    with in_mem_db.connect as conn:
+    with in_mem_db.connect() as conn:
         result = conn.execute(text(query))
         print(result.fetchall())
